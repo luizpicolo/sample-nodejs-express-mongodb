@@ -7,9 +7,11 @@ const bodyParser = require('body-parser');
 const sassMiddleware = require('node-sass-middleware');
 const mongoose = require('mongoose');
 
-var index = require('./routes/index');
+// Routes
+const index = require('./routes/index');
 
-var app = express();
+const app = express();
+
 // Connection Mongoose
 const address_db = 'localhost';
 const port = 27017;
