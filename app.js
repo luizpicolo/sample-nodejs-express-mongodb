@@ -13,13 +13,15 @@ const index = require('./routes/index');
 const app = express();
 
 // Connection Mongoose
-const address_db = 'localhost';
-const port = 27017;
-const db = 'testdb';
+const user = '';
+const password = '';
+const cluster = '';
+const db = '';
+const uri = `mongodb+srv://${user}:${password}@${cluster}/${db}?retryWrites=true&w=majority`;
 
-mongoose.connect(
-  'mongodb://'+address_db+':'+port+'/'+db+'', { useNewUrlParser: true }
-);
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+  console.log('monggose connected');
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
